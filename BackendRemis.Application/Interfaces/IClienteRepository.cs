@@ -13,5 +13,6 @@ namespace BackendRemis.Application.Interfaces
         Task<Cliente?> BuscarPorTelefonoAsync(string telefono);
         Task<IEnumerable<Cliente>> BuscarPorNombreAsync(string nombre);
         Task<Cliente?> BuscarPorEmailAsync(string email); // Opcional
+       
     }
 }

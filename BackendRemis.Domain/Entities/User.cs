@@ -23,7 +23,7 @@ namespace BackendRemis.Domain.Entities
         // <----Sólo aplica para Admins, AdminAsignados y Operadores. En clientes y otros roles, debe ser null.
         public ICollection<TelefonoExtra>? TelefonosExtra { get; set; }
         public ICollection<DireccionExtra>? DireccionesExtra { get; set; }
-        public ICollection<RegistroDeSesion> RegistrosDeSesion { get; set; } = null!;
+        public ICollection<RegistroDeSesion> RegistrosDeSesion { get; set; } = new List<RegistroDeSesion>();
 
     }
 

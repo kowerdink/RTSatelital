@@ -10,7 +10,7 @@ namespace BackendRemis.Domain.Entities
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Codigo { get; set; } = null!; // Ejemplo: "500.1", "CENTRAL", "MERCADO"
-        public string Direccion { get; set; } required
+        public string Direccion { get; set; } = null!;
         public string? NombreReferencia { get; set; } // "Central", "Mercado", "Kiosco Susi"
         public string? MensajeDefault { get; set; } // Opcional: “Señora con bolsos”
         public string? Observaciones { get; set; } // Por si querés guardar una nota fija

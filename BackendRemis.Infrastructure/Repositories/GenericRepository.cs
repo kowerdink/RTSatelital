@@ -25,7 +25,7 @@ namespace BackendRemis.Infrastructure.Repositories
             return await _dbSet.ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(Guid id)
+        public virtual async Task<T?> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }
@@ -42,14 +42,10 @@ namespace BackendRemis.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public virtual async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(T entity)
         {
-            var entity = await GetByIdAsync(id);
-            if (entity != null)
-            {
-                _dbSet.Remove(entity);
-                await _context.SaveChangesAsync();
-            }
+            _dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
     }
