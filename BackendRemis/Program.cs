@@ -24,6 +24,8 @@ builder.Services.AddScoped<IDuenioAutoRepository, DuenioAutoRepository>();
 builder.Services.AddScoped<IViajeRepository, ViajeRepository>();
 builder.Services.AddScoped<IAutoRepository, AutoRepository>();
 builder.Services.AddScoped<IAutoChoferRepository, AutoChoferRepository>();
+builder.Services.AddScoped<IMarcaRepository, MarcaRepository>();
+builder.Services.AddScoped<IModeloRepository, ModeloRepository>();
 builder.Services.AddScoped<ICuentaCorrienteRepository, CuentaCorrienteRepository>();
 builder.Services.AddScoped<IAgendamientoRecurrenteRepository, AgendamientoRecurrenteRepository>();
 builder.Services.AddScoped<IPermisoOperadorRepository, PermisoOperadorRepository>();
