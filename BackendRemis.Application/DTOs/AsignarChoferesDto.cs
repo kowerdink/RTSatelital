@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BackendRemis.Application.DTOs
 {
-    internal class AutoDto
+    public class AsignarChoferesDto
     {
+        public List<Guid> ChoferIds { get; set; } = new();
     }
 }

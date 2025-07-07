@@ -54,5 +54,16 @@ namespace BackendRemis.Infrastructure.Repositories
                 .Where(a => a.Anio == anio)
                 .ToListAsync();
         }
+
+        public override async Task<IEnumerable<Auto>> GetAllAsync()
+        {
+            return await _dbSet
+                .Include(a => a.Marca)
+                .Include(a => a.Modelo)
+                .Include(a => a.DuenioAuto)
+                .Include(a => a.AutoChoferes)
+                    .ThenInclude(ac => ac.Chofer)
+                .ToListAsync();
+        }
     }
 }
