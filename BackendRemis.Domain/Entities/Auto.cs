@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BackendRemis.Domain.Enums;
+﻿using BackendRemis.Domain.Enums;
 
 namespace BackendRemis.Domain.Entities
 {
@@ -13,19 +8,19 @@ namespace BackendRemis.Domain.Entities
 
         public Guid MarcaId { get; set; }
         public Marca Marca { get; set; } = null!;
+
         public Guid ModeloId { get; set; }
         public Modelo Modelo { get; set; } = null!;
-        public int Anio { get; set; } required
-        public string Patente { get; set; } required
-        public string Color { get; set; } required
-        public int NumeroMovil { get; set; } required
 
-        public string Seguro { get; set; }
-        required
-        public DateTime FechaVencimientoSeguro { get; set; }
-        required
-        public DateTime FechaVencimientoVTV { get; set; }
-        required
+        // En C# 11, "required" va antes del tipo/propiedad
+        public required int Anio { get; set; }
+        public required string Patente { get; set; }
+        public required string Color { get; set; }
+        public required int NumeroMovil { get; set; }
+
+        public required string Seguro { get; set; }
+        public required DateTime FechaVencimientoSeguro { get; set; }
+        public required DateTime FechaVencimientoVTV { get; set; }
 
         public Guid? ChoferId { get; set; }
         public Chofer? Chofer { get; set; }
@@ -33,12 +28,10 @@ namespace BackendRemis.Domain.Entities
         public EstadoAuto Estado { get; set; } = EstadoAuto.FueraDeServicio;
 
         // Dueño
-        public Guid DuenioAutoId { get; set; } 
+        public Guid DuenioAutoId { get; set; }
         public DuenioAuto DuenioAuto { get; set; } = null!;
-        
 
         // Relación muchos a muchos con Choferes
         public List<AutoChofer> AutoChoferes { get; set; } = new();
     }
-
 }

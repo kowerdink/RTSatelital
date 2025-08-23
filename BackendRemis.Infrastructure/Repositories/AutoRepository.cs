@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BackendRemis.Application.Interfaces;
+﻿using BackendRemis.Application.Interfaces;
 using BackendRemis.Domain.Entities;
 using BackendRemis.Domain.Enums;
 using BackendRemis.Infrastructure.Persistence;
