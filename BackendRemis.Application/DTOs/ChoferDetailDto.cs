@@ -15,7 +15,7 @@ namespace BackendRemis.Application.DTOs
         public string Direccion { get; set; } = null!;
         public string Email { get; set; } 
         public string DNI { get; set; } = null!;
-        public string CUIT_CUIL { get; set; } = null!;
+        public string Cuitcuil { get; set; } = null!;
         public string NumeroLicencia { get; set; } = null!;
         public DateTime FechaVencimientoLicencia { get; set; }
         public List<string> TelefonosExtra { get; set; } = new();

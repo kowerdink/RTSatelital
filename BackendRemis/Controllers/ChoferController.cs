@@ -29,7 +29,7 @@ namespace BackendRemis.API.Controllers
                 Direccion = c.Direccion,
                 Email = c.Email,
                 DNI = c.DNI,
-                CUIT_CUIL = c.CUIT_CUIL,
+                Cuitcuil = c.CUIT_CUIL,
                 NumeroLicencia = c.NumeroLicencia,
                 FechaVencimientoLicencia = c.FechaVencimientoLicencia,
                 TelefonosExtra = c.TelefonosExtra?.Select(te => te.Telefono).ToList() ?? new(),
@@ -54,7 +54,7 @@ namespace BackendRemis.API.Controllers
                 Direccion = c.Direccion,
                 Email = c.Email,
                 DNI = c.DNI,
-                CUIT_CUIL = c.CUIT_CUIL,
+                Cuitcuil = c.CUIT_CUIL,
                 NumeroLicencia = c.NumeroLicencia,
                 FechaVencimientoLicencia = c.FechaVencimientoLicencia,
                 TelefonosExtra = c.TelefonosExtra?.Select(te => te.Telefono).ToList() ?? new(),
@@ -75,7 +75,7 @@ namespace BackendRemis.API.Controllers
                 Direccion = dto.Direccion,
                 Email = dto.Email,
                 DNI = dto.DNI,
-                CUIT_CUIL = dto.CUIT_CUIL,
+                CUIT_CUIL = dto.Cuitcuil,
                 NumeroLicencia = dto.NumeroLicencia,
                 FechaVencimientoLicencia = dto.FechaVencimientoLicencia,
                 TelefonosExtra = dto.TelefonosExtra?.Select(t => new TelefonoExtra { Telefono = t }).ToList(),
@@ -99,7 +99,7 @@ namespace BackendRemis.API.Controllers
             chofer.Direccion = dto.Direccion;
             chofer.Email = dto.Email;
             chofer.DNI = dto.DNI;
-            chofer.CUIT_CUIL = dto.CUIT_CUIL;
+            chofer.CUIT_CUIL = dto.Cuitcuil;
             chofer.NumeroLicencia = dto.NumeroLicencia;
             chofer.FechaVencimientoLicencia = dto.FechaVencimientoLicencia;
             chofer.TelefonosExtra = dto.TelefonosExtra?.Select(t => new TelefonoExtra { Telefono = t }).ToList();
