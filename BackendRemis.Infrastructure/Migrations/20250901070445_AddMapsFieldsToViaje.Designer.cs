@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using BackendRemis.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,13 +13,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackendRemis.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250901070445_AddMapsFieldsToViaje")]
+    partial class AddMapsFieldsToViaje
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -390,23 +393,11 @@ namespace BackendRemis.Infrastructure.Migrations
                     b.Property<Guid?>("CuentaCorrienteId")
                         .HasColumnType("uuid");
 
-                    b.Property<double?>("DestinoLat")
-                        .HasColumnType("double precision");
-
-                    b.Property<double?>("DestinoLng")
-                        .HasColumnType("double precision");
-
                     b.Property<string>("DireccionDestino")
                         .HasColumnType("text");
 
                     b.Property<string>("DireccionOrigen")
                         .HasColumnType("text");
-
-                    b.Property<int?>("DistanciaMetros")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("DuracionSegundos")
-                        .HasColumnType("integer");
 
                     b.Property<string>("EntreCalle1")
                         .HasColumnType("text");
@@ -446,12 +437,6 @@ namespace BackendRemis.Infrastructure.Migrations
 
                     b.Property<int>("Origen")
                         .HasColumnType("integer");
-
-                    b.Property<double?>("OrigenLat")
-                        .HasColumnType("double precision");
-
-                    b.Property<double?>("OrigenLng")
-                        .HasColumnType("double precision");
 
                     b.Property<string>("TelefonoContacto")
                         .HasColumnType("text");

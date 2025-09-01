@@ -50,7 +50,16 @@ namespace BackendRemis.Domain.Entities
         public OrigenSolicitudViaje Origen { get; set; }
         public Guid? CuentaCorrienteId { get; set; }
         public CuentaCorriente? CuentaCorriente { get; set; }
+
+        // 🔹 NUEVO: Preparado para Google Maps
+        public double? OrigenLat { get; set; }
+        public double? OrigenLng { get; set; }
+        public double? DestinoLat { get; set; }
+        public double? DestinoLng { get; set; }
+        public int? DistanciaMetros { get; set; }
+        public int? DuracionSegundos { get; set; }
+
     }
-     
+
 
 }
